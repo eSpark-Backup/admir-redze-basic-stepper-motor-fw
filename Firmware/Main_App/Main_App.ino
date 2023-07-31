@@ -114,7 +114,15 @@ void loop() {
     lcd2.clear();
     lcd2.setCursor(0,0);
     lcd2.print("Abgelaufene Zeit:"); //timeLapsed displayed
-
+    
+    /*Display Open: 0 / Count: 0 when button pressed */
+    lcd1.setCursor(0, 0);         // move cursor to   (2, 1)
+    result1 = string1 + (String)revCount1; // concate both string
+    lcd1.print(result1);
+    lcd1.setCursor(0, 1);         // move cursor to   (2, 1)
+    result2 = string2 + (String)revCount1; //concate both string
+    lcd1.print(result2); // print message at (2, 1)
+    
     Serial.print("ButtonPressed!");
     timer_setup();
     runapp = 1;
@@ -161,17 +169,11 @@ void run_motorapp()
     revCount1++;
 
   lcd1.setCursor(0, 0);         // move cursor to   (2, 1)
-  String str1 = String(revCount1);
-  result1 = string1 + str1; // concate both string
+  result1 = string1 + (String)revCount1; // concate both string
   lcd1.print(result1);
-  lcd1.setCursor(0, 1);         // move cursor to   (2, 1)
-  String str2 = String(revCount2);
-  result2 = string2 + str2; //concate both string
-  lcd1.print(result2); // print message at (2, 1)
 
   delay(500);
 
-  
   // Reset the position to 0:
   stepper.setCurrentPosition(0);
   
@@ -183,13 +185,8 @@ void run_motorapp()
   }
 
   revCount2++;
-  lcd1.setCursor(0, 0);         // move cursor to   (2, 1)
-  str1 = String(revCount1);
-  result1 = string1 + str1; // concate both string
-  lcd1.print(result1);
   lcd1.setCursor(0, 1);         // move cursor to   (2, 1)
-  str2 = String(revCount2);
-  result2 = string2 + str2; //concate both string
+  result2 = string2 + (String)revCount2; //concate both string
   lcd1.print(result2); // print message at (2, 1)
 }
 
@@ -220,5 +217,4 @@ ISR(TIMER1_COMPA_vect)
     lcd2.setCursor(0,1);
     lcd2.print(result3);
     cli();
-    Serial.println(result3);}
 }
