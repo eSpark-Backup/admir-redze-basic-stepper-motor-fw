@@ -3,10 +3,6 @@ const int dirPin = 2;
 const int stepPin = 3;
 const int stepsPerRevolution = 200;
 static void Timer1_setup(void);
-//float userInput; // Variable to store the user input
-//float timePerRev; //time Per Revolution
-//float value_of_ocr1a; //value of OCR1A Register stored in this variable
-//int intValue;
 
 static void Timer1_setup(void)
 {
@@ -20,13 +16,6 @@ static void Timer1_setup(void)
     digitalWrite(dirPin, HIGH);
 }
 
-// void calculation ()
-// {
-//   timePerRev = 1/((userInput/60)*200);
-//   value_of_ocr1a = ((timePerRev*16000000)/256);
-//   intValue = int(value_of_ocr1a);
-// }
-
 void setup() {
   Serial.begin(9600); // Initialize serial communication at 9600 baud
   Serial.println("Please enter RPM: "); // Prompt the user
@@ -39,7 +28,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
 }
 
 ISR(TIMER1_COMPA_vect)

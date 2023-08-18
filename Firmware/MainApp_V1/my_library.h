@@ -9,7 +9,4 @@ extern float value_of_ocr1a; //value of OCR1A Register stored in this variable
 extern int intValue;
 void calculation ();
 
-
-//int addTwoInts(int a, int b);
-
 #endif

@@ -8,11 +8,5 @@ void calculation ()
   timePerRev = 1/((userInput/60)*200);
   value_of_ocr1a = ((timePerRev*16000000)/256);
   intValue = int(value_of_ocr1a);
-  //Serial.println(value_of_ocr1a);
-  //Serial.println(intValue);
-}
 
-// int addTwoInts(int a, int b)
-// {
-//   return a + b;
-// }
+}
